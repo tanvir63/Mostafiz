@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_level_screen"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/titleView"
+        android:gravity="center_horizontal"
+        android:text="Choose Level to Play"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/hScroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp" >
+
+                <TextView
+                    android:id="@+id/firstView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="First Level"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" >
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/firstLevel"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/firstView"
+                    android:src="@drawable/icon_level_1_unlocked" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp" >
+
+                <TextView
+                    android:id="@+id/secondView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Second Level"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/secondLevel"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/secondView"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_level_2_locked" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp" >
+
+                <TextView
+                    android:id="@+id/thirdView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Third Level"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/thirdLevel"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/thirdView"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_level_3_locked" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp" >
+
+                <TextView
+                    android:id="@+id/fourthView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Fourth Level"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/fourthLevel"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/fourthView"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_level_4_locked" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp" >
+
+                <TextView
+                    android:id="@+id/fifthView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Fifth Level"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/fifthLevel"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/fifthView"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_level_5_locked" >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp" >
+
+                <TextView
+                    android:id="@+id/comingView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Coming Level"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/comingLevel"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/comingView"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_coming_soon" >
+                </ImageView>
+            </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

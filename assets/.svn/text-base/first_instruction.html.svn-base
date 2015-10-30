@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+	<font color = "#316DAD"><marquee direction="up"  scrollamount="2.5" scrolldelay="0">
+			<h3>You will get 3 seconds time for each image to shuffle and if
+				you press correct (for example fly button for something which flies)
+				then you will get 100 points and the next image will be called, and
+				if you presses wrong button, then there would be 0 points and the
+				next image will be called. Even if you do not press any button in 3
+				seconds, 0 points will be given and next image will be called. There
+				would be total of 20 random images from the whole collection of
+				images in this level, and you must at least identify 15 images to
+				unlock the next level, otherwise there will be game over.</h3>
+		</marquee> </font>
+
+</body>
+</html>

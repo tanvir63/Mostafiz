@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android
+END
+BaseDialogListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/BaseDialogListener.java
+END
+SessionStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/SessionStore.java
+END
+AsyncFacebookRunner.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/AsyncFacebookRunner.java
+END
+FacebookError.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/FacebookError.java
+END
+FacebookConnector.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/FacebookConnector.java
+END
+LoginButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/LoginButton.java
+END
+FacebookShareManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/FacebookShareManager.java
+END
+FbDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/FbDialog.java
+END
+SessionEvents.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/SessionEvents.java
+END
+BaseRequestListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/BaseRequestListener.java
+END
+DialogError.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/DialogError.java
+END
+Facebook.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/Facebook.java
+END
+Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/78/trunk/Chidiya%20Udd/src/com/fb/android/Util.java
+END

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ad_publishar_id">a14fdc8a59ecc16</string>
+    <string name="app_name">Chidiya Udd</string>
+    <string name="settings_title">Chidiya Udd Settings</string>
+    <string name="settings_sound_title">Sound Settings</string>
+    <string name="settings_game_label_title">Game Difficulty Level</string>
+    <string name="sound_title">Sound</string>
+    <string name="sound_summary">Sound On/Off effect</string>
+    <string name="sound_key">sound_effect</string>
+    <string name="instructions">Chidiya Udd is a very simple and an old Indian childhood game. The basic concept is that you have to identify the property of the object coming on the screen, whether it flies or it doesn’t.</string>
+    <string name="instructions1"> Some objects like pigeon, sparrow, kite, balloon etc fly, while others like dog, cat, lion, TV, comb doesn’t fly. There will be object and characters coming and going on the game screen, you have to identify the object property and then press the “Fly” or “Don’t Fly” button accordingly. Correct guess will give you points; incorrect guess will give 0 points. In each level, you must identify at least 15 out of 20 images correctly, in order to go to the next level.</string>
+    <string name="instructions2"> Game has two difficulty levels: Easy and Hard</string>
+    <string name="instructions3"> In Easy Level, the game play will be normal and the buttons will be fixed, while in Hard Level, there will be slight change in the way buttons come in game, sometimes fly button will be in left, sometimes it will be in right. So you have to concentrate more during the game in hard level.</string>
+    <string name="instructions4"> This is all about the basics of the game, Happy Playing </string>
+   
+    <string name="help_title">How to Play the Game ?</string>
+    <string name="first_level_instruction">You will get 3 seconds time for each image 
+        	to shuffle and if you press correct 
+        	(for example fly button for something which flies) 
+        	then you will get 100 points and the next image will be called, 
+        	and if you presses wrong button, then there would be 0 points and 
+        	the next image will be called. Even if you don’t 
+        	press any button in 3 seconds, 0 points will be given and next 
+        	image will be called. There would be total of 20 random images 
+        	from the whole collection of images in this level, 
+        	and you must at least identify 15 images to unlock the next level, 
+        	otherwise there will be game over.</string>
+    <string name="second_level_instruction">You will get 2 seconds time for each image 
+        	to shuffle and if you press correct 
+        	(for example fly button for something which flies) 
+        	then you will get 100 points and the next image will be called, 
+        	and if you presses wrong button, then there would be 0 points and 
+        	the next image will be called. Even if you don’t 
+        	press any button in 2 seconds, 0 points will be given and next 
+        	image will be called. There would be total of 20 random images 
+        	from the whole collection of images in this level, 
+        	and you must at least identify 15 images to unlock the next level, 
+        	otherwise there will be game over.</string>
+    <string name="third_level_instruction">There would be two images shuffling at a time, 
+        with 2 seconds (hereafter on all levels), 
+        and on one image there would always be an arrow, 
+        can be on left image or right image randomly, 
+        you have to press the correct button for the image with arrow. 
+        Correct gets 100 points and incorrect gets 0 points,
+         minimum 15 out of 20 images to be identified correctly
+         for unlocking into the next level</string>
+
+</resources>

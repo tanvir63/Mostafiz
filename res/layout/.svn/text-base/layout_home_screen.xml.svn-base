@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_home_screen"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:id="@+id/logoLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/logoView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/firstRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoLayout"
+            android:layout_marginLeft="10dp" >
+
+            <ImageView
+                android:id="@+id/newGameView"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:src="@drawable/start_button" />
+
+            <ImageView
+                android:id="@+id/settingsView"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/newGameView"
+                android:src="@drawable/setting_button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/secondRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstRow"
+            android:layout_marginTop="15dp" >
+
+            <ImageView
+                android:id="@+id/quickView"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/quick_button" />
+
+            <ImageView
+                android:id="@+id/scoreView"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/quickView"
+                android:src="@drawable/score_button" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/thirdRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/secondRow"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp" >
+
+            <ImageView
+                android:id="@+id/helpView"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:src="@drawable/how_button" />
+
+            <ImageView
+                android:id="@+id/rateView"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/helpView"
+                android:src="@drawable/rateus_button" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

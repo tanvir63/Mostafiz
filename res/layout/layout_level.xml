@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_level_screen"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
+        <com.google.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/ad_publishar_id" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*" >
+
+            <TableRow>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" >
+
+                    <TextView
+                        android:id="@+id/levelView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Level 1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/secondLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" >
+
+                    <TextView
+                        android:id="@+id/levelView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Level 2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/securityView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/levelView2"
+                        android:layout_centerHorizontal="true"
+                        android:src="@android:drawable/ic_lock_lock" />
+                </RelativeLayout>
+            </TableRow>
+
+            <TableRow>
+
+                <RelativeLayout
+                    android:id="@+id/thirdLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" >
+"
+
+                    <TextView
+                        android:id="@+id/levelView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Level 3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/securityView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/levelView3"
+                        android:layout_centerHorizontal="true"
+                        android:src="@android:drawable/ic_lock_lock" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fourthLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" >
+
+                    <TextView
+                        android:id="@+id/levelView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Level 4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/securityView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/levelView4"
+                        android:layout_centerHorizontal="true"
+                        android:src="@android:drawable/ic_lock_lock" />
+                </RelativeLayout>
+            </TableRow>
+
+            <TableRow>
+            </TableRow>
+
+            <TableRow>
+
+                <RelativeLayout
+                    android:id="@+id/fifthLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" >
+
+                    <TextView
+                        android:id="@+id/levelView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Level 5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/securityView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/levelView5"
+                        android:layout_centerHorizontal="true"
+                        android:src="@android:drawable/ic_lock_lock" />
+                </RelativeLayout>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

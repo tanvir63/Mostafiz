@@ -1,0 +1,296 @@
+package com.webtech.chidiya;
+
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import com.webtech.utils.Constants;
+import com.webtech.utils.NoRepeatRandom;
+import com.webtech.utils.Utils;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.SlidingDrawer;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class FirstLevelActivity extends Activity implements OnClickListener {
+
+	private ImageView imageView;
+	private Button flyButton;
+	private Button dontFlyButton;
+	private TextView scoreView;
+
+	private JSONArray ja = null;
+	private Random random = new Random();
+	private NoRepeatRandom nrr;
+	private int count = 0;
+
+	private Timer timer = new Timer();
+	private TimerTask task;
+	private int delay = 0;
+	private int period = 3000;
+
+	private int score = 0;
+	private int status = 0;
+	private int flyStatus = 0;
+
+	private String buttonText[] = { "Fly", "Doesn't Fly" };
+	private String DIFFICULTY_LEVEL;
+
+	private int firstValue;
+	private int secondValue;
+
+	private String optionsMenu[] = { "Retry", "Share Score To Facebook",
+			"Cancel" };
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		try {
+			super.onCreate(savedInstanceState);
+
+			setContentView(R.layout.layout_first_level);
+
+			imageView = (ImageView) findViewById(R.id.imageView);
+			scoreView = (TextView) findViewById(R.id.scoreView);
+
+			byte[] data = Utils.getFileData(FirstLevelActivity.this,
+					"level_1.json");
+			String jsonString = new String(data);
+			try {
+				ja = new JSONArray(jsonString);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			flyButton = (Button) findViewById(R.id.flyButton);
+			flyButton.setOnClickListener(this);
+
+			dontFlyButton = (Button) findViewById(R.id.dontFlyButton);
+			dontFlyButton.setOnClickListener(this);
+
+			nrr = new NoRepeatRandom(0, ja.length() - 1);
+			DIFFICULTY_LEVEL = SettingPrefs.getGameLevel(this);
+
+			imageSlideShow();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private void imageSlideShow() {
+		final Handler handler = new Handler();
+		final Runnable updateResults = new Runnable() {
+			public void run() {
+				try {
+					if (count <= 19) {
+
+						if (DIFFICULTY_LEVEL.equalsIgnoreCase("hard_game")) {
+							firstValue = random.nextInt(2);
+
+							if (firstValue == 0) {
+								secondValue = 1;
+							} else {
+								secondValue = 0;
+							}
+
+							flyButton.setText(buttonText[firstValue]);
+							dontFlyButton.setText(buttonText[secondValue]);
+						}
+
+						imageView.setVisibility(View.GONE);
+						changeImage();
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		};
+
+		timer.scheduleAtFixedRate(new TimerTask() {
+			public void run() {
+				handler.post(updateResults);
+
+			}
+		}, delay, period);
+
+	}
+
+	private void changeImage() throws Exception {
+
+		int position = nrr.GetRandom();
+		String filename;
+		int imgId = R.drawable.icon_bird;
+
+		try {
+			filename = ja.getJSONObject(position).getString("image")
+					.toLowerCase();
+			imgId = getResources().getIdentifier(filename, "raw",
+					getClass().getPackage().getName());
+
+			flyStatus = ja.getJSONObject(position).getInt("status");
+
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		animate(imageView, imgId, 1500);
+		count++;
+	}
+
+	private final void animate(final ImageView imView, final int imgId,
+			final int animTime) throws Exception {
+		imView.setVisibility(View.VISIBLE);
+
+		BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(
+				imgId);
+		Bitmap bitmap = drawable.getBitmap();
+
+		final TranslateAnimation anim1 = new TranslateAnimation(-2
+				* Math.max(imView.getWidth(), bitmap.getWidth()), 0, 0, 0);
+
+		/* new TranslateAnimation(fromXDelta, toXDelta, fromYDelta, toYDelta) */
+
+		anim1.setDuration(animTime);
+		anim1.setFillAfter(true);
+		anim1.setAnimationListener(new Animation.AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation arg0) {
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation arg0) {
+			}
+
+			@Override
+			public void onAnimationEnd(Animation arg0) {
+				// imView.setVisibility(View.INVISIBLE);
+			}
+		});
+		imView.startAnimation(anim1);
+		imView.setImageBitmap(bitmap);
+		scoreView.setText("" + score);
+
+		if (DIFFICULTY_LEVEL.equalsIgnoreCase("hard_game")) {
+			if (score >= 2250) {
+				Utils.putSecondLevelUnlocked(this,
+						Constants.SECOND_LEVEL_UNLOCKED, true);
+				LevelActivity.securityView2.setVisibility(View.INVISIBLE);
+			}
+		} else {
+			if (score >= 1500) {
+				Utils.putSecondLevelUnlocked(this,
+						Constants.SECOND_LEVEL_UNLOCKED, true);
+				LevelActivity.securityView2.setVisibility(View.INVISIBLE);
+			}
+
+		}
+
+		if (count == 19) {
+			int higestScore = Utils.getHighestScore(this,
+					Constants.FIRST_LEVEL_HIGHEST_SCORE);
+			if (score > higestScore) {
+				Utils.putHighestScore(this,
+						Constants.FIRST_LEVEL_HIGHEST_SCORE, score);
+			}
+			showOptionsPopup();
+		}
+
+	}
+
+	private void showOptionsPopup() {
+		imageView.setVisibility(View.INVISIBLE);
+		new AlertDialog.Builder(this).setTitle("Options")
+				.setItems(optionsMenu, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface alert, int position) {
+						switch (position) {
+						case 0:
+<<<<<<< .mine
+							count = 0;
+							imageView.setVisibility(View.INVISIBLE);
+							imageSlideShow();
+=======
+							count=0;
+							imageView.setVisibility(View.INVISIBLE);
+							imageSlideShow();
+>>>>>>> .r28
+							alert.cancel();
+							break;
+						case 1:
+							alert.cancel();
+							break;
+						case 2:
+							alert.cancel();
+							break;
+						}
+
+					}
+				}).show();
+	}
+
+	private void manageAnimation(ImageView image) {
+		Animation anim = AnimationUtils.loadAnimation(this,
+				R.anim.anim_left_to_right);
+		// anim.reset();
+		// image.clearAnimation();
+		image.startAnimation(anim);
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.flyButton:
+			if ((flyButton.getText().toString())
+					.equalsIgnoreCase(buttonText[0])) {
+				status = 1;
+			} else {
+				status = 0;
+			}
+			break;
+		case R.id.dontFlyButton:
+			if ((dontFlyButton.getText().toString())
+					.equalsIgnoreCase(buttonText[0])) {
+				status = 1;
+			} else {
+				status = 0;
+			}
+			break;
+		default:
+			break;
+		}
+
+		if (DIFFICULTY_LEVEL.equalsIgnoreCase("hard_game")) {
+			if (status == flyStatus) {
+				score += 150;
+			} else {
+				score += 0;
+			}
+		} else {
+			if (status == flyStatus) {
+				score += 100;
+			} else {
+				score += 0;
+			}
+		}
+
+	}
+
+}

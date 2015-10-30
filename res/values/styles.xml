@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.SplashTheme" parent="android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="Theme.Application" parent="android:style/Theme.Light.NoTitleBar"></style>
+
+    <style name="Theme.Application" parent="android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="Theme.Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+</resources>
