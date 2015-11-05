@@ -6,12 +6,12 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/titleView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:id="@+id/titleView"
         android:gravity="center_horizontal"
         android:text="Choose Level to Play"
         android:textColor="#FFFFFF"
@@ -23,7 +23,6 @@
         android:layout_height="fill_parent" >
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >
 
